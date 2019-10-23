@@ -1,0 +1,88 @@
+
+/* ------ Body ---- */
+
+body{
+    background-color: #ffffff;
+    font-family: 'Darker Grotesque', sans-serif;
+} 
+
+a{
+    color: white
+}
+
+/* ---------- Home page -------------- */
+.jumbotron {
+    background-image: url('/images//bike-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+  }
+
+
+.navbar{
+    padding:0px ;
+}
+
+.logo{
+    margin-left: 10px;
+}
+
+.bike-card {
+    margin-bottom: 15px;
+  }
+
+.card-body{
+    padding: 0;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bike-price{
+    font-weight: bold;
+}
+
+/* ----- Shop page ---------- */
+
+.header-shop{
+    height: 40px;
+    padding-left: 20px;
+}
+
+.icon-basket{
+    margin-right: 5px;
+}
+
+.shop-title{
+    border-top: solid;
+    border-bottom: solid;
+    border-width: thin;
+    border-color: #e9ecef;
+    font-weight: bold;
+    
+}
+
+.shopping-box{
+    background-color: #fcfcfc;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: solid;
+    border-width: thin;
+    border-color: #e9ecef;
+}
+
+.basket-img{
+    width: 170px;
+}
+
+.total-box{
+    border-bottom: solid;
+    border-width: thin;
+    border-color: #e9ecef;
+    font-weight: bold;
+}
+
+.btn-checkout{
+    margin-top: 10px;
+    font-weight: bold;
+}
