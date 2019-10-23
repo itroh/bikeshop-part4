@@ -18,6 +18,34 @@ function deleteBike(pos) {
     dataCardBike.splice(pos, 1);
 }
 
+function addBike(newBike) {
+    console.log("condition de " + dejaPanier(newBike.name));
+    if (dejaPanier(newBike.name)) {
+        for (var i = 0; i < dataCardBike.length; i++) {
+            if (dataCardBike[i].name == newBike.name) {
+                console.log("deja dans le panier, j'ai retrouvé mon velo " + newBike.quantity);
+                dataCardBike[i].quantity++;
+                console.log("quantité +1  " + dataCardBike[i].quantity);
+            }
+        }
+
+    } else {
+        console.log("pas encore dans le panier");
+        dataCardBike.push(newBike);
+    }
+}
+
+
+function dejaPanier(model) {
+    for (var i = 0; i < dataCardBike.length; i++) {
+        if (dataCardBike[i].name == model) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('index', { dataBike });
@@ -30,13 +58,14 @@ router.get('/shop', function(req, res, next) {
 
 /* POST Shop page. */
 router.post('/shop', function(req, res, next) {
-    dataCardBike.push({
+    var newBike = {
         name: req.body.bikeNameFromFront,
         url: req.body.bikeImageFromFront,
         price: req.body.bikePriceFromFront,
         quantity: req.body.bikeQuantityFromFront
-    })
-
+    };
+    //dataCardBike.push(newBike);
+    addBike(newBike);
     console.log("/shop", req.body);
     res.render('shop', { dataCardBike });
 });
